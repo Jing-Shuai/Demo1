@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Signup.css">
+    <title>Website Monitoring and Controlling BMS System</title>
+    <meta name="description" content=""/>
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+    
+    <!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+    <!-- PAGE LEVEL STYLE -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+    <!-- DATATABLES -->
+	<link href="assets/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="wrapper">
+			<div id="header" class="navbar-toggleable-md clearfix sticky">
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">				
+						<!-- Logo -->
+		               <img src="assets/images/_smarty/hcmute.png" height="90" />
+                       <!-- <img src="assets/images/_smarty/clc.png" height="90"/>
+						 -->
+						<div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+							<nav class="nav-main">
+
+								<ul id="topMain" class="nav nav-pills nav-main" style="height:100px;">
+									<li><!-- TRANG CHỦ -->
+                                        <a href="HomePage.html">TRANG CHỦ</a>
+									</li>
+
+									<li><!-- GIỚI THIỆU -->
+                                        <a href="ThanhVien.html">GIỚI THIỆU</a>
+                                    </li>
+                                    
+									<!-- <li>VỀ CHÚNG TÔI
+                                        <a href="ThanhVien.html">THÀNH VIÊN</a>
+                                    </li> -->
+                                    
+                                    <li><!-- giám sát -->
+                                        <a href="login.html">DỮ LIỆU HỆ THỐNG</a>
+									</li>                     
+								</ul>	
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+			</div>
+      <div class="between">
+      </div>
+            <div class="wapper">
+              
+                
+                <div class="wapper-heading">
+                  <h1 class="wapper-heading_content">Sign Up</h1>
+                </div>
+                <form class="submit-form" onsubmit="signup()">
+                  <div class="input__field">
+                    <input id="username" type="text" placeholder="User Name" />
+                  </div>
+          
+                  <div class="input__field">
+                    <input id="email" type="text" placeholder="Email" />
+                  </div>
+                  <div class="input__field">
+                    <input id="password" type="password" placeholder="Password" />
+                  </div>
+                  <div class="input__field">
+                    <input id="password" type="password" placeholder="Confirm Password" />
+                  </div>
+                  <div class="btn-field">
+
+                    <button id="btnSignup" class="btn btn-hover" style="float: left;  color: white;">Sign Up</button>
+                 <a href="login.html" class="login-link btn-hover" style>Login</a>
+                  </div>
+               
+                </form>
+              
+              </div>
+    </div>
+    
+    <script src="Signup.js"></script>
+</body>
+</html>

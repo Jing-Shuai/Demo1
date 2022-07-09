@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HỆ THỐNG THÔNG GIÓ TÒA NHÀ</title>
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+        rel="stylesheet" type="text/css" />
+    <!-- CORE CSS -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- THEME CSS -->
+    <link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <!-- PAGE LEVEL STYLE -->
+    <link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <!-- DATATABLES -->
+    <link href="assets/css/layout-datatables.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./controlandmonitor.css">
+</head>
+
+
+<body>
+  
+
+    <div id="header" class="navbar-toggleable-md clearfix sticky">
+        <header id="topNav">
+            <div class="container">
+                <img class="header_nav_img " src="assets/images/_smarty/hcmute.png" /> 
+                <!-- <img class="header_nav_img "  src="assets/images/_smarty/clc.png"/> -->
+
+                <div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
+                    <nav class="nav-main">
+
+                        <ul id="topMain" class="nav nav-pills nav-main" >
+                            <li><a href="HomePage.html">TRANG CHỦ</a></li>
+                            <li><a href="ThanhVien.html">GIỚI THIỆU</a></li>
+                            <li><a href="login.html">DỮ LIỆU HỆ THỐNG</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+    </div>
+    <div class="between">
+    </div>
+    <div class="background"> 
+    <div class="body-2">
+        <ul class="main__body__list">
+            <li class="main_body__item">
+                <div class="body_item">
+                    <p class="main__body__content">
+                        Set Nhiệt độ :
+                    </p>
+                    <input class="main__body__content_input" id="tbox" type="text"></input>
+                    <div class="enable">
+                        <p class="enable-mode">Enable</p>
+                        <button class="main_body_btn btn js-btnte off_btn" onclick="EnableAir()">OFF</button>
+                    </div>
+                    <div class="run">
+                        <p class="run-mode">Run</p>
+                        <button class="main_body_btn btn js-btntc off_btn" onclick="ClickAir()">OFF</button>
+                    </div>
+                </div>
+                <div class="main_body_results">
+                    <p class="content">Nhiệt độ:
+                    <h1 class="variable" id="nhietdo"></h1>
+                    </p>
+
+                </div>
+            </li>
+
+            <li class="main_body__item">
+                <div class="body_item">
+                    <p class="main__body__content margin_right">
+                        Set độ ẩm :
+
+                    </p>
+                    <input class="main__body__content_input" id="hbox" type="text"></input>
+                    <div class="enable">
+
+                        <p class="enable-mode">Enable</p>
+                        <button class="main_body_btn btn js-btnhe off_btn " onclick="EnableFan1()">OFF</button>
+                    </div>
+                    <div class="run">
+                        <p class="run-mode">Run</p>
+                        <button class="main_body_btn btn js-btnhc off_btn " onclick="ClickFan1()">OFF</button>
+                    </div>
+                </div>
+                <div class="main_body_results">
+                    <p class="content">Độ ẩm:
+                    <h1 class="variable" id="doam"></h1>
+                    </p>
+
+                </div>
+            </li>
+
+            <li class="main_body__item">
+                <div class="body_item">
+                     <p class="main__body__content margin_right2 ">
+                        Set khí gas :
+                     </p>
+                     <input class="main__body__content_input " id="gbox" type="text"></input>
+                    <div class="enable">
+                       <p class="enable-mode">Enable</p>
+                       <button class="main_body_btn btn js-btnge off_btn" onclick="EnableFan2()">OFF</button>
+                    </div>
+                    <div class="run">
+                       <p class="run-mode">Run</p>
+                       <button class="main_body_btn btn js-btngc off_btn" onclick="ClickFan2()">OFF</button>
+                   </div>
+                </div>
+                <div class="main_body_results">
+                    <p class="content">Nồng Độ Gas:
+                    <h1 class="variable" id="gas"></h1>
+                    </p>
+
+                </div>
+            </li>
+            <li class="main_body__item_save">
+                <button id="save" class="main_body_btn btn-save scale">SAVE</button>
+            </li>
+
+
+
+        </ul>
+
+
+    </body>
+</div>
+
+<!-- </div> -->
+
+    <!-- <br><br>
+    Set Độ ẩm <input id="hbox" type="text"></input> <br><br>
+    Set Khí gas <input id="gbox" type="text"></input> <br><br>
+    <br><br>
+    <button id="save">SAVE</button>
+
+    <div>
+        <button onclick="EnableAir()">ON/OFF</button>
+        <button onclick="ClickAir()">ON/OFF</button>
+        <button onclick="EnableFan1()">ON/OFF</button>
+        <button onclick="ClickFan1()">ON/OFF</button>
+        <button onclick="EnableFan2()">ON/OFF</button>
+        <button onclick="ClickFan2()">ON/OFF</button>
+        <!-- <button onclick="EnableAlarm()">ON/OFF</button>
+        <button onclick="ClickAlarm()">ON/OFF</button> -->
+    <!-- </div> 
+    
+    <form">
+        <table>
+           
+            <tr>
+                <td><p>Độ ẩm:</p></td>
+                <td><h1 id="doam"></h1></td>
+            </tr>
+            <tr>
+                <td><p>Khí gas:</p></td>
+                <td><h1 id="gas"></h1></td>
+            </tr>
+        </table>
+        <br>
+    </form> -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+    <script type="module">
+        const firebaseConfig = {
+            apiKey: "AIzaSyDy9VHkyYassAJsMGZGY8CRYNsAPPX4rUM",
+            authDomain: "webj-a8ed2.firebaseapp.com",
+            projectId: "webj-a8ed2",
+            storageBucket: "webj-a8ed2.appspot.com",
+            messagingSenderId: "652736526047",
+            appId: "1:652736526047:web:cce0049657a241b04cdb6a",
+            measurementId: "G-3HDCX3HN1W"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        //đưa giá trị nhiệt độ lên web
+        var nhietDo = document.getElementById('nhietdo');
+        var dbRef = firebase.database().ref('/GiamSat/NhietDo/data/0/point_value');
+        dbRef.on('value', snap => nhietDo.innerText = snap.val() + " ℃");
+        //đưa giá trị độ ẩm lên web
+        var doAm = document.getElementById('doam');
+        var dbRef = firebase.database().ref('/GiamSat/DoAm/data/0/point_value');
+        dbRef.on('value', snap => doAm.innerText = snap.val() + " %");
+        //đưa giá trị khí gas lên web
+        var khiGas = document.getElementById('gas');
+        var dbRef = firebase.database().ref('/GiamSat/KhiGas/data/0/point_value');
+        dbRef.on('value', snap => khiGas.innerText = snap.val() + " ppm");
+
+        //đưa giá trị on/off điều khiển các thiết bị tương ứng 1/0 về cơ sở dữ liệu firebase 
+        function WriteDataToFirebase(fan1, fan2, air, ena_fan1, ena_fan2, ena_air) {
+            firebase.database().ref("DieuKhien").set({
+                Quatcapkhi: fan1,
+                Quathutkhi: fan2,
+                Maylanh: air,
+                // Chuongbao: alarm,
+                Chophep_Quatcapkhi: ena_fan1,
+                Chophep_Quathutkhi: ena_fan2,
+                Chophep_Maylanh: ena_air,
+                // Chophep_Chuongbao: ena_alarm
+            })
+            var dbRefFan1 = firebase.database().ref('DieuKhien').child('Quatcapkhi');
+            dbRefFan1.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateFan1 = true;
+                    valueFan1 = "1";
+                } else if (snap.val() == "0") {
+                    stateFan1 = false;
+                    valueFan1 = "0";
+                }
+            })
+            var dbRefFan2 = firebase.database().ref('DieuKhien').child('Quathutkhi');
+            dbRefFan2.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateFan2 = true;
+                    valueFan2 = "1";
+                } else if (snap.val() == "0") {
+                    stateFan2 = false;
+                    valueFan2 = "0";
+                }
+            })
+            var dbRefAir = firebase.database().ref('DieuKhien').child('Maylanh');
+            dbRefAir.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateAir = true;
+                    valueAir = "1";
+                } else if (snap.val() == "0") {
+                    stateAir = false;
+                    valueAir = "0";
+                }
+            })
+            // var dbRefAlarm = firebase.database().ref('DieuKhien').child('Chuongbao');
+            // dbRefAlarm.on('value',snap =>{
+            // if(snap.val()=="1"){
+            //     stateAlarm=true;
+            //     valueAlarm="1";
+            // }else if(snap.val()=="0"){
+            //     stateAlarm=false;
+            //     valueAlarm="0";
+            // }
+            // })
+            var dbRefEna_fan1 = firebase.database().ref('DieuKhien').child('Chophep_Quatcapkhi');
+            dbRefEna_fan1.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateEna_fan1 = true;
+                    valueEna_fan1 = "1";
+                } else if (snap.val() == "0") {
+                    stateEna_fan1 = false;
+                    valueEna_fan1 = "0";
+                }
+            })
+            var dbRefEna_fan2 = firebase.database().ref('DieuKhien').child('Chophep_Quathutkhi');
+            dbRefEna_fan2.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateEna_fan2 = true;
+                    valueEna_fan2 = "1";
+                } else if (snap.val() == "0") {
+                    stateEna_fan2 = false;
+                    valueEna_fan2 = "0";
+                }
+            })
+            var dbRefEna_air = firebase.database().ref('DieuKhien').child('Chophep_Maylanh');
+            dbRefEna_air.on('value', snap => {
+                if (snap.val() == "1") {
+                    stateEna_air = true;
+                    valueEna_air = "1";
+                } else if (snap.val() == "0") {
+                    stateEna_air = false;
+                    valueEna_air = "0";
+                }
+            })
+            // var dbRefEna_larm = firebase.database().ref('DieuKhien').child('Chophep_Chuongbao');
+            // dbRefEna_alarm.on('value',snap =>{
+            // if(snap.val()=="1"){
+            //     stateEna_alarm=true;
+            //     valueEna_alarm="1";
+            // }else if(snap.val()=="0"){
+            //     stateEna_alarm=false;
+            //     valueEna_alarm="0";
+            // }
+            // })
+        }
+
+        var tV, hV, gV;
+        // function check(a,b,b){
+        //     var checkA = typeof a ==="number"
+        //     var checkB = typeof b ==="number"
+        //     var checkC = typeof c ==="number"
+        //    if(checkA && checkB && checkC){
+        //     return true;
+        //    }
+        //    else
+        //    return false;
+        // }
+        function Ready() {
+            
+            
+            tV = document.getElementById('tbox').value;
+            hV = document.getElementById('hbox').value;
+            gV = document.getElementById('gbox').value;
+            console.log(typeof tV);
+            console.log(typeof hV);
+            console.log(typeof gV);
+        }
+        //  function check(a,b,b){
+        //      var checkA = typeof a ==="number"
+        //      var checkB = typeof b ==="number"
+        //      var checkC = typeof c ==="number"
+        //    console.log(checkA);
+        //  }
+
+        document.getElementById('save').onclick = function () {
+            
+            Ready();
+            
+          
+
+            firebase.database().ref('Setgiatrihoatdong/').set({
+                Setnhietdo: tV,
+                Setdoam: hV,
+                SetkhiGas: gV,
+            });
+        
+       
+    }
+
+    </script>
+    <script src="./controlandmonitor.js"> </script>
+    
+
+    
+</body>
+
+</html>
